@@ -1,0 +1,1 @@
+cat $1 | tr '[:space:]' '[\n*]' | grep -v "^\s*$" | C:/cygwin64/bin/sort.exe | uniq -c | LC_COLLATE=C C:/cygwin64/bin/sort.exe -k1,1bnr -k2,2 | awk '{print $2" "$1}' > $2
